@@ -1,0 +1,19 @@
+:9000 {
+  @postitems {
+    method POST
+    path /v1/items
+  }
+
+  @getitems {
+    method GET
+    path /v1/items
+  }
+
+  handle @getitems {
+    reverse_proxy :8080
+  }
+
+  handle @postitems {
+    reverse_proxy :8081
+  }
+}
