@@ -9,11 +9,20 @@
     path /v1/items
   }
 
+  @getui {
+    method GET
+    path /*
+  }
+
   handle @getitems {
     reverse_proxy :8080
   }
 
   handle @postitems {
     reverse_proxy :8081
+  }
+
+  handle @getui {
+    reverse_proxy :8082
   }
 }
