@@ -30,6 +30,8 @@ npm -g install http-server
 
 2. Launch the backend applications
 
+    **IMPORTANT** make sure you made available the variables in the `.env` (i.e. set them up and exported them to the environment)
+
     ```bash
     # terminal 2
     cd /path/to/project/creator
