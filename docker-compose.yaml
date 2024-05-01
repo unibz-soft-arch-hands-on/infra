@@ -6,6 +6,8 @@ services:
     ports:
       - "5672:5672"
       - "15672:15672"
+    profiles:
+      - async
 
   creator_db:
     image: postgres
@@ -15,6 +17,8 @@ services:
       - "5432:5432"
     volumes:
       - creator_pg:/var/lib/postgresql/data
+    profiles:
+      - async
 
   querier_db:
     image: postgres
@@ -24,6 +28,9 @@ services:
       - "5433:5432"
     volumes:
       - querier_pg:/var/lib/postgresql/data
+    profiles:
+      - layered
+      - async
 
 
 
